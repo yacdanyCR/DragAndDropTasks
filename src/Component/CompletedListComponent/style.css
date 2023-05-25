@@ -10,6 +10,10 @@
  	border-radius: 20px;
  }
 
+ .completed__ul_List {
+ 	margin-right: 2rem;
+ }
+
  .completed__ul_List>li {
  	background-color: #ffff;
  	margin: 1rem;

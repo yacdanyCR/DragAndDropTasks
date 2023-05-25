@@ -10,6 +10,10 @@
 	margin: 1rem;
 }
 
+.incompleted__ul_List {
+	margin-right: 2rem;
+}
+
 .incompleted__ul_List>li {
 	background-color: #ffff;
 	margin: 1rem;
