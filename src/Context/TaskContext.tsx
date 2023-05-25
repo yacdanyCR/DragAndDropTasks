@@ -12,11 +12,12 @@ const TaskProvider = ({ children }: TaskProviderProps) => {
 	const [listTask, setlistTask] = useState<listTask[]>([])
 
 	const handleAdd = () => {
+		setTask("")
 		setlistTask([...listTask, { id: Date.now(), task: task, completed: false }])
 	}
 
 	return (
-		<TaskContext.Provider value={{ setTask, setlistTask, handleAdd }}>
+		<TaskContext.Provider value={{ task, setTask, setlistTask, handleAdd }}>
 			{children}
 		</TaskContext.Provider>
 	)
