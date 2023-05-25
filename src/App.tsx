@@ -12,8 +12,8 @@ function App() {
 
       <section>
         <div className='list__Section'>
-          <CompletedListComponent />
           <IncompletedListComponent />
+          <CompletedListComponent />
         </div>
       </section>
     </>

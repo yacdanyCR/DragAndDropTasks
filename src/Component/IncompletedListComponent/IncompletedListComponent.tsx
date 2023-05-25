@@ -9,14 +9,13 @@ const IncompletedListComponent = () => {
 
 	return (
 		<div className='incompleted__List'>
+			<div className="incompleted__list_title">
+				<h2>Incompleted Tasks</h2>
+			</div>
 			<ul className='incompleted__ul_List'>
-				{incompletedTasks.map((el) => {
-					return (
-						<li key={el.id} id={`${el.id}`}>
-							{el.task}
-						</li>
-					)
-				})}
+				{incompletedTasks.map((el) => (
+					<li>{el.task}</li>
+				))}
 			</ul>
 		</div>
 	)
