@@ -2,6 +2,7 @@ import { useContext } from 'react'
 import './style.css'
 import { TaskContext } from '../../Context/TaskContext'
 import { listTask } from '../../Interface/TaskInterface'
+import { Draggable, Droppable } from 'react-beautiful-dnd'
 
 const CompletedListComponent = () => {
 	const objtContext = useContext(TaskContext)
@@ -12,15 +13,25 @@ const CompletedListComponent = () => {
 			<div className="completed__title_list">
 				<h2>Completed List</h2>
 			</div>
-			<ul className='completed__ul_List'>
-				{completedTasks.map((el) => {
-					return (
-						<li key={el.id} id={`${el.id}`}>
-							{el.task}
-						</li>
-					)
-				})}
-			</ul>
+			<Droppable droppableId='completedTasks'>
+				{(droppableProvided) => <ul {...droppableProvided.droppableProps} ref={droppableProvided.innerRef} className='completed__ul_List'>
+					{completedTasks.map((el, index) => {
+
+						return (
+							<Draggable key={el.id} draggableId={el.id} index={index}>
+								{(draggableProvided) => <li {...draggableProvided.draggableProps}
+									ref={draggableProvided.innerRef}
+									{...draggableProvided.dragHandleProps}>
+									{el.task}
+								</li>}
+							</Draggable>
+						)
+
+					})}
+					{droppableProvided.placeholder}
+				</ul>
+				}
+			</Droppable>
 		</div>
 	)
 }
