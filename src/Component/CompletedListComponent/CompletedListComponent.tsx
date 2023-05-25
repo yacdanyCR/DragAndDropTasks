@@ -9,7 +9,7 @@ const CompletedListComponent = () => {
 
 	return (
 		<div className='completed__List'>
-			<ul>
+			<ul className='completed__ul_List'>
 				{completedTasks.map((el) => {
 					return (
 						<li key={el.id} id={`${el.id}`}>
