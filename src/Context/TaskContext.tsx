@@ -32,13 +32,17 @@ const TaskProvider = ({ children }: TaskProviderProps) => {
 	const [task, setTask] = useState<string>("")
 	const [listTask, setlistTask] = useState<listTask[]>(taskTest)
 
-	const handleAdd = () => {
+	const handleAdd = (): void => {
 		setTask("")
 		setlistTask([...listTask, { id: String(Date.now()), task: task, completed: false }])
 	}
 
+	const handleDeleteTask = (id: string): void => {
+		setlistTask(listTask.filter((el) => el.id !== id))
+	}
+
 	return (
-		<TaskContext.Provider value={{ task, setTask, setlistTask, handleAdd, listTask }}>
+		<TaskContext.Provider value={{ task, setTask, setlistTask, handleAdd, handleDeleteTask, listTask }}>
 			{children}
 		</TaskContext.Provider>
 	)
