@@ -10,24 +10,12 @@ const IncompletedListComponent = () => {
 	const objtTask = useContext(TaskContext)
 	const incompletedTasks: listTask[] = objtTask.listTask.filter((el) => !el.completed)
 
-	/* const handleDragEnd = (result: DropResult) => {
-		console.log(result)
-		if (result.destination) {
-			const destination = result.destination.index
-			const previousObj = incompletedTasks[destination]
-			const currentObj = incompletedTasks.findIndex((el) => el.id === result.draggableId)
-
-			incompletedTasks.splice(destination, 1, incompletedTasks[currentObj])
-			incompletedTasks.splice(currentObj, 1, previousObj)
-		}
-	} */
-
 	return (
 		<div className='incompleted__List'>
 			<div className="incompleted__list_title">
 				<h2>Incompleted Tasks</h2>
 			</div>
-			<Droppable droppableId='tasks'>
+			<Droppable droppableId='Incompletedtasks'>
 				{(droppableProvided) =>
 					<ul {...droppableProvided.droppableProps} ref={droppableProvided.innerRef} className='incompleted__ul_List'>
 						{incompletedTasks.map((el, index) => (
