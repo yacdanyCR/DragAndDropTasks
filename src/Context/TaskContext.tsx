@@ -19,7 +19,7 @@ const taskTest = [{
 	task: "Maria",
 	completed: false,
 }, {
-	id: String(Date.now() + 1),
+	id: String(Date.now() + 7),
 	task: "Joshua",
 	completed: false
 }

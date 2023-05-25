@@ -5,9 +5,10 @@
  	align-items: center;
  	background-color: #32de84;
  	width: 300px;
- 	height: 300px;
+ 	height: max-content;
  	margin: 1rem;
  	border-radius: 20px;
+ 	min-height: 400px;
  }
 
  .completed__ul_List {

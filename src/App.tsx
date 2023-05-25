@@ -1,6 +1,5 @@
 import './App.css'
-import CompletedListComponent from './Component/CompletedListComponent/CompletedListComponent'
-import IncompletedListComponent from './Component/IncompletedListComponent/IncompletedListComponent'
+import DragAndDropComponent from './Component/DragAndDropComponent/DragAndDropComponent'
 import InputComponent from './Component/InputComponent/InputComponent'
 
 function App() {
@@ -12,8 +11,7 @@ function App() {
 
       <section>
         <div className='list__Section'>
-          <IncompletedListComponent />
-          <CompletedListComponent />
+          <DragAndDropComponent />
         </div>
       </section>
     </>
