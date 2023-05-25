@@ -9,7 +9,8 @@ interface TaskContextProps {
 	setTask: React.Dispatch<React.SetStateAction<string>>,
 	setlistTask: React.Dispatch<React.SetStateAction<listTask[]>>,
 	listTask: listTask[],
-	handleAdd: () => void
+	handleAdd: () => void,
+	handleDeleteTask: (id: string) => void
 }
 
 export type {

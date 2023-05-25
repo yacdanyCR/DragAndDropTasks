@@ -3,6 +3,7 @@ import './style.css'
 import { TaskContext } from '../../Context/TaskContext'
 import { listTask } from '../../Interface/TaskInterface'
 import { DragDropContext, Draggable, DropResult, Droppable } from 'react-beautiful-dnd'
+import { AiFillDelete } from 'react-icons/all'
 
 
 const IncompletedListComponent = () => {
@@ -35,7 +36,12 @@ const IncompletedListComponent = () => {
 										<li {...draggableProvided.draggableProps}
 											ref={draggableProvided.innerRef}
 											{...draggableProvided.dragHandleProps}
-										>{el.task}</li>
+										>
+											{el.task}
+											<span className='btn_Delete' onClick={() => objtTask.handleDeleteTask(el.id)}>
+												<AiFillDelete size={25} color={"red"} />
+											</span>
+										</li>
 									}
 								</Draggable>
 							))}
