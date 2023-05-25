@@ -4,7 +4,7 @@
 	align-items: center;
 	flex-direction: column;
 	width: 300px;
-	height: 300px;
+	height: max-content;
 	background-color: #fd5c63;
 	border-radius: 20px;
 	margin: 1rem;
