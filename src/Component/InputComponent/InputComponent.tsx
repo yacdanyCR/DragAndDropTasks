@@ -1,15 +1,9 @@
-import { useState } from 'react'
-import { listTask } from '../../Interface/TaskInterface'
+import { useContext } from 'react'
 import './style.css'
+import { TaskContext } from '../../Context/TaskContext'
 
 const InputComponent = () => {
-	const [task, setTask] = useState<string>("")
-	const [listTask, setlistTask] = useState<listTask[]>([])
-
-	const handleAdd = () => {
-		setlistTask([...listTask, { id: Date.now(), task: task, completed: false }])
-	}
-
+	const { handleAdd, setTask } = useContext(TaskContext)
 	return (
 		<div className='input__Section'>
 			<input onChange={(e) => setTask(e.target.value)} placeholder='¡Add Something!' />
