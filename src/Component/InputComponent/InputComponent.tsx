@@ -1,11 +1,6 @@
 import { useState } from 'react'
+import { listTask } from '../../Interface/TaskInterface'
 import './style.css'
-
-interface listTask {
-	id: number,
-	task: string,
-	completed: boolean
-}
 
 const InputComponent = () => {
 	const [task, setTask] = useState<string>("")
