@@ -6,20 +6,20 @@ interface TaskProviderProps {
 }
 
 const taskTest = [{
-	id: Date.now() + 1,
+	id: String(Date.now() + 1),
 	task: "jack",
 	completed: true
 },
 {
-	id: Date.now() + 2,
+	id: String(Date.now() + 2),
 	task: "Angely",
 	completed: true
 }, {
-	id: Date.now() + 3,
+	id: String(Date.now() + 3),
 	task: "Maria",
 	completed: false,
 }, {
-	id: Date.now() + 1,
+	id: String(Date.now() + 1),
 	task: "Joshua",
 	completed: false
 }
@@ -34,7 +34,7 @@ const TaskProvider = ({ children }: TaskProviderProps) => {
 
 	const handleAdd = () => {
 		setTask("")
-		setlistTask([...listTask, { id: Date.now(), task: task, completed: false }])
+		setlistTask([...listTask, { id: String(Date.now()), task: task, completed: false }])
 	}
 
 	return (

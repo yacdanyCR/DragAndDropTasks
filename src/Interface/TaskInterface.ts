@@ -1,5 +1,5 @@
 interface listTask {
-	id: number,
+	id: string,
 	task: string,
 	completed: boolean
 }
