@@ -8,9 +8,10 @@ body {
   display: flex;
   justify-content: center;
   align-items: center;
-  background: #4CA1AF;
-  background: -webkit-linear-gradient(to right, #C4E0E5, #4CA1AF);
-  background: linear-gradient(to right, #C4E0E5, #4CA1AF);
+  background: #8360c3;
+  background: -webkit-linear-gradient(to right, #2ebf91, #8360c3);
+  background: linear-gradient(to right, #2ebf91, #8360c3);
+
 }
 
 .list__Section {

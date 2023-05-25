@@ -1,9 +1,23 @@
-import React from 'react'
+import { useContext } from 'react'
 import './style.css'
+import { TaskContext } from '../../Context/TaskContext'
+import { listTask } from '../../Interface/TaskInterface'
+
 const CompletedListComponent = () => {
+	const objtContext = useContext(TaskContext)
+	const completedTasks: listTask[] = objtContext.listTask.filter((el) => el.completed)
+
 	return (
 		<div className='completed__List'>
-			<h2>Completed Tasks</h2>
+			<ul>
+				{completedTasks.map((el) => {
+					return (
+						<li key={el.id} id={`${el.id}`}>
+							{el.task}
+						</li>
+					)
+				})}
+			</ul>
 		</div>
 	)
 }
