@@ -3,18 +3,19 @@ import './style.css'
 import { TaskContext } from '../../Context/TaskContext'
 import { listTask } from '../../Interface/TaskInterface'
 import { Draggable, Droppable } from 'react-beautiful-dnd'
+import { AiFillDelete } from 'react-icons/ai'
 
 const CompletedListComponent = () => {
 	const objtContext = useContext(TaskContext)
 	const completedTasks: listTask[] = objtContext.listTask.filter((el) => el.completed)
 
 	return (
-		<div className='completed__List'>
-			<div className="completed__title_list">
-				<h2>Completed List</h2>
-			</div>
-			<Droppable droppableId='completedTasks'>
-				{(droppableProvided) => <ul {...droppableProvided.droppableProps} ref={droppableProvided.innerRef} className='completed__ul_List'>
+		<Droppable droppableId='completedTasks'>
+			{(droppableProvided) => <div  {...droppableProvided.droppableProps} ref={droppableProvided.innerRef} className='completed__List'>
+				<div className="completed__title_list">
+					<h2>Completed Tasks</h2>
+				</div>
+				<ul className='completed__ul_List'>
 					{completedTasks.map((el, index) => {
 
 						return (
@@ -23,16 +24,18 @@ const CompletedListComponent = () => {
 									ref={draggableProvided.innerRef}
 									{...draggableProvided.dragHandleProps}>
 									{el.task}
+									<span className='btn_Delete' onClick={() => objtContext.handleDeleteTask(el.id)}>
+										<AiFillDelete size={25} color={"red"} />
+									</span>
 								</li>}
 							</Draggable>
 						)
-
 					})}
-					{droppableProvided.placeholder}
 				</ul>
-				}
-			</Droppable>
-		</div>
+				{droppableProvided.placeholder}
+			</div>
+			}
+		</Droppable>
 	)
 }
 
