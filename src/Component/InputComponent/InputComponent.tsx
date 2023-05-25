@@ -1,4 +1,5 @@
 import { useState } from 'react'
+import './style.css'
 
 interface listTask {
 	id: number,
@@ -15,9 +16,9 @@ const InputComponent = () => {
 	}
 
 	return (
-		<div>
-			<input onChange={(e) => setTask(e.target.value)} />
-			<button onClick={handleAdd}>Add</button>
+		<div className='input__Section'>
+			<input onChange={(e) => setTask(e.target.value)} placeholder='¡Add Something!' />
+			<button className='addTask__Button' onClick={handleAdd}>Add</button>
 		</div>
 	)
 }

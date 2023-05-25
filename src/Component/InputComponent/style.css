@@ -1,0 +1,20 @@
+.input__Section {
+	display: flex;
+	justify-content: center;
+	align-items: center;
+	margin-top: 4rem;
+}
+
+.input__Section>input {
+	padding: 10px;
+	margin-right: 1rem;
+	border-style: none;
+	border-radius: 10px;
+}
+
+.addTask__Button {
+	padding: 10px;
+	border-radius: 10px;
+	border: none;
+	width: 100px;
+}
