@@ -5,7 +5,7 @@
 	flex-direction: column;
 	width: 300px;
 	height: max-content;
-	background-color: #fd5c63;
+	background-image: linear-gradient(135deg, #FFAA85 10%, #B3315F 100%);
 	border-radius: 20px;
 	margin: 1rem;
 	min-height: 400px;

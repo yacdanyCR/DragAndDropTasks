@@ -25,7 +25,7 @@ const CompletedListComponent = () => {
 									{...draggableProvided.dragHandleProps}>
 									{el.task}
 									<span className='btn_Delete' onClick={() => objtContext.handleDeleteTask(el.id)}>
-										<AiFillDelete size={25} color={"red"} />
+										<AiFillDelete size={20} color={"red"} />
 									</span>
 								</li>}
 							</Draggable>

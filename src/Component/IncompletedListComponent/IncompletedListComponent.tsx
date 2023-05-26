@@ -26,7 +26,7 @@ const IncompletedListComponent = () => {
 								>
 									{el.task}
 									<span className='btn_Delete' onClick={() => objtTask.handleDeleteTask(el.id)}>
-										<AiFillDelete size={25} color={"red"} />
+										<AiFillDelete size={20} color={"red"} />
 									</span>
 								</li>
 							}

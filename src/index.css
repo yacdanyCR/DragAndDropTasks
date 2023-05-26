@@ -1,17 +1,21 @@
 @import url('https://fonts.googleapis.com/css2?family=Raleway:ital,wght@0,100;0,300;0,400;0,600;1,100;1,400&family=Roboto+Slab:wght@900&family=Roboto:ital,wght@1,100;1,300;1,900&display=swap');
 
 * {
-  font-style: italic;
   list-style: none;
+}
+
+h2 {
+  text-decoration-line: underline;
+  color: #ffff;
 }
 
 body {
   display: flex;
   justify-content: center;
   align-items: center;
-  background: #8360c3;
-  background: -webkit-linear-gradient(to right, #2ebf91, #8360c3);
-  background: linear-gradient(to right, #2ebf91, #8360c3);
+  background-color: #175e86;
+  background-image: linear-gradient(160deg, #175e86 0%, #80D0C7 100%);
+
 
 }
 
@@ -22,6 +26,6 @@ body {
 }
 
 .btn_Delete {
-  margin-left: 1rem;
+  margin-left: 1.5rem;
   cursor: pointer;
 }
