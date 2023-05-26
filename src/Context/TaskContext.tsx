@@ -14,6 +14,7 @@ const TaskProvider = ({ children }: TaskProviderProps) => {
 	const handleAdd = (): void => {
 		setTask("")
 		setlistTask([...listTask, { id: String(Date.now()), task: task, completed: false }])
+		localStorage.setItem("data_Task", JSON.stringify(listTask))
 	}
 
 	const handleDeleteTask = (id: string): void => {
