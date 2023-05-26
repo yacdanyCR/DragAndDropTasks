@@ -8,15 +8,6 @@ const DragAndDropComponent = () => {
 	const { listTask, setlistTask } = useContext(TaskContext)
 
 	const handleDragEnd = (result: DropResult) => {
-		/* console.log(result)
-		if (result.destination) {
-			console.log("estoy aaqui")
-			const destination = result.destination.index
-			const previousObj = incompletedTasks[destination]
-			const currentObj = incompletedTasks.findIndex((el) => el.id === result.draggableId)
-			incompletedTasks.splice(destination, 1, incompletedTasks[currentObj])
-			incompletedTasks.splice(currentObj, 1, previousObj)
-		} */
 		if (result.destination && result.destination.droppableId !== result.source.droppableId) {
 			setlistTask(listTask.map(el => {
 				if (el.id === result.draggableId) {
