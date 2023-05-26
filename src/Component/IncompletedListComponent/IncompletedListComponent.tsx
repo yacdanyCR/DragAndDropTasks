@@ -8,7 +8,7 @@ import { AiFillDelete } from 'react-icons/all'
 
 const IncompletedListComponent = () => {
 	const objtTask = useContext(TaskContext)
-	const incompletedTasks: listTask[] = objtTask.listTask.filter((el) => !el.completed)
+	const incompletedTasks: listTask[] = objtTask.listTask.filter((el) => el.completed === false)
 
 	return (
 		<Droppable droppableId='Incompletedtasks'>

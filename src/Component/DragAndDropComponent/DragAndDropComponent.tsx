@@ -16,6 +16,7 @@ const DragAndDropComponent = () => {
 					return el;
 				}
 			}));
+			localStorage.setItem("data_Task", JSON.stringify(listTask))
 		}
 	}
 	return (

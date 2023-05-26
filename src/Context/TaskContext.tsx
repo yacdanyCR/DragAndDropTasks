@@ -1,36 +1,15 @@
-import React, { createContext, useState } from 'react'
+import React, { createContext, useState, useEffect } from 'react'
 import { listTask, TaskContextProps } from '../Interface/TaskInterface'
 
 interface TaskProviderProps {
 	children: React.ReactNode
 }
 
-const taskTest = [{
-	id: String(Date.now() + 1),
-	task: "jack",
-	completed: true
-},
-{
-	id: String(Date.now() + 2),
-	task: "Angely",
-	completed: true
-}, {
-	id: String(Date.now() + 3),
-	task: "Maria",
-	completed: false,
-}, {
-	id: String(Date.now() + 7),
-	task: "Joshua",
-	completed: false
-}
-
-]
-
 const TaskContext = createContext<TaskContextProps>({} as TaskContextProps)
 
 const TaskProvider = ({ children }: TaskProviderProps) => {
 	const [task, setTask] = useState<string>("")
-	const [listTask, setlistTask] = useState<listTask[]>(taskTest)
+	const [listTask, setlistTask] = useState<listTask[]>([])
 
 	const handleAdd = (): void => {
 		setTask("")
@@ -39,7 +18,16 @@ const TaskProvider = ({ children }: TaskProviderProps) => {
 
 	const handleDeleteTask = (id: string): void => {
 		setlistTask(listTask.filter((el) => el.id !== id))
+		localStorage.setItem("data_Task", JSON.stringify(listTask))
 	}
+
+	useEffect(() => {
+		if (localStorage.getItem("data_Task")) {
+			const dataLocalStorage = localStorage.getItem("data_Task") || ""
+			setlistTask(JSON.parse(dataLocalStorage))
+		}
+	}, [])
+
 
 	return (
 		<TaskContext.Provider value={{ task, setTask, setlistTask, handleAdd, handleDeleteTask, listTask }}>
